@@ -3,8 +3,10 @@
 
 
 # Android
-*/google-services.json
+*google-services.json
 
 # Unity
 
 # Web
+
+*.DS_Store
