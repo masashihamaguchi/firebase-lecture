@@ -1,5 +1,5 @@
 //
-//  TextViewContainer.swift
+//  TextView.swift
 //  SampleFirebaseSeminariOS
 //
 //  Created by Fumiya Tanaka on 2021/02/13.
@@ -8,14 +8,7 @@
 import Foundation
 import UIKit
 
-class TextViewContainer: UIView {
-    
-    @IBOutlet weak var textView: UITextView!
-    
-    override var intrinsicContentSize: CGSize {
-        return textView.intrinsicContentSize
-    }
-    
+class TextView: UITextView {
     override func awakeFromNib() {
         super.awakeFromNib()
         let toolBar = UIToolbar()
@@ -23,11 +16,11 @@ class TextViewContainer: UIView {
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolBar.items = [space, closeButton]
         toolBar.sizeToFit()
-        textView.inputAccessoryView = toolBar
+        inputAccessoryView = toolBar
     }
     
     @objc
     func close() {
-        textView.resignFirstResponder()
+        resignFirstResponder()
     }
 }

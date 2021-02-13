@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		D327FD0B25D6D9E4005FBBBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D327FD0A25D6D9E4005FBBBA /* GoogleService-Info.plist */; };
 		D327FD0E25D6DB7E005FBBBA /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D327FD0D25D6DB7E005FBBBA /* TextField.swift */; };
-		D33EC90825D6D70500A0F300 /* TextViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33EC90725D6D70500A0F300 /* TextViewContainer.swift */; };
 		D3D945C025D6C6C40015580F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D945BF25D6C6C40015580F /* AppDelegate.swift */; };
 		D3D945C225D6C6C40015580F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D945C125D6C6C40015580F /* SceneDelegate.swift */; };
 		D3D945C425D6C6C40015580F /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D945C325D6C6C40015580F /* AddViewController.swift */; };
 		D3D945C725D6C6C40015580F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D945C525D6C6C40015580F /* Main.storyboard */; };
 		D3D945C925D6C6C50015580F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D945C825D6C6C50015580F /* Assets.xcassets */; };
 		D3D945CC25D6C6C50015580F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D945CA25D6C6C50015580F /* LaunchScreen.storyboard */; };
+		D3E388F425D7CC520055EA55 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E388F325D7CC520055EA55 /* TextView.swift */; };
 		F54BD891D952FC0CF2E3AA5C /* Pods_SampleFirebaseSeminariOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 973EFA0C808E9AB771188690 /* Pods_SampleFirebaseSeminariOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +23,6 @@
 		973EFA0C808E9AB771188690 /* Pods_SampleFirebaseSeminariOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleFirebaseSeminariOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D327FD0A25D6D9E4005FBBBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D327FD0D25D6DB7E005FBBBA /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		D33EC90725D6D70500A0F300 /* TextViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewContainer.swift; sourceTree = "<group>"; };
 		D3D945BC25D6C6C40015580F /* SampleFirebaseSeminariOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleFirebaseSeminariOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D945BF25D6C6C40015580F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D945C125D6C6C40015580F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		D3D945C825D6C6C50015580F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3D945CB25D6C6C50015580F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3D945CD25D6C6C50015580F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3E388F325D7CC520055EA55 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		EC608D9DBBADFA4D9E4E4752 /* Pods-SampleFirebaseSeminariOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFirebaseSeminariOS.release.xcconfig"; path = "Target Support Files/Pods-SampleFirebaseSeminariOS/Pods-SampleFirebaseSeminariOS.release.xcconfig"; sourceTree = "<group>"; };
 		FE24A0F8E031D31A912A6B4D /* Pods-SampleFirebaseSeminariOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleFirebaseSeminariOS.debug.xcconfig"; path = "Target Support Files/Pods-SampleFirebaseSeminariOS/Pods-SampleFirebaseSeminariOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,7 +92,7 @@
 				D3D945BF25D6C6C40015580F /* AppDelegate.swift */,
 				D3D945C125D6C6C40015580F /* SceneDelegate.swift */,
 				D327FD0D25D6DB7E005FBBBA /* TextField.swift */,
-				D33EC90725D6D70500A0F300 /* TextViewContainer.swift */,
+				D3E388F325D7CC520055EA55 /* TextView.swift */,
 				D3D945C825D6C6C50015580F /* Assets.xcassets */,
 				D3D945CA25D6C6C50015580F /* LaunchScreen.storyboard */,
 				D3D945C525D6C6C40015580F /* Main.storyboard */,
@@ -218,8 +218,8 @@
 				D3D945C425D6C6C40015580F /* AddViewController.swift in Sources */,
 				D3D945C025D6C6C40015580F /* AppDelegate.swift in Sources */,
 				D3D945C225D6C6C40015580F /* SceneDelegate.swift in Sources */,
+				D3E388F425D7CC520055EA55 /* TextView.swift in Sources */,
 				D327FD0E25D6DB7E005FBBBA /* TextField.swift in Sources */,
-				D33EC90825D6D70500A0F300 /* TextViewContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

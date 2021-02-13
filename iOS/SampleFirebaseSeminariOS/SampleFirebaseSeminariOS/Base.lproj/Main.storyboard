@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tMW-2K-22d">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -14,141 +14,172 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AddViewController" customModule="SampleFirebaseSeminariOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="fl3-jL-SCH">
-                                <rect key="frame" x="40" y="128" width="334" height="439.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpz-hM-4mf">
+                                <rect key="frame" x="32" y="583" width="311" height="36"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="24" minY="8" maxX="24" maxY="8"/>
+                                <state key="normal" title="データを追加する">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="add" destination="BYZ-38-t0r" eventType="touchUpInside" id="URR-1B-n1Q"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3P3-Vq-Pox">
+                                <rect key="frame" x="0.0" y="44" width="375" height="507"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dYo-6g-Cr8">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="23"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXW-wb-3h2">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="本名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ya8-fg-oFy" customClass="TextFeld" customModule="SampleFirebaseSeminariOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gT3-uC-LBo">
-                                                <rect key="frame" x="0.0" y="21" width="334" height="2"/>
-                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="IHa-vL-TPU"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UZQ-As-DrO">
-                                        <rect key="frame" x="0.0" y="71" width="334" height="23"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ニックネーム" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptO-PY-hMi" customClass="TextFeld" customModule="SampleFirebaseSeminariOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvG-fm-3OS">
-                                                <rect key="frame" x="0.0" y="21" width="334" height="2"/>
-                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="NhM-iS-MgJ"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="k8I-7w-1SR">
-                                        <rect key="frame" x="0.0" y="142" width="334" height="23"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="リーダーズ期" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHt-IT-qU0" customClass="TextFeld" customModule="SampleFirebaseSeminariOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                            </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mq4-FZ-j4h">
-                                                <rect key="frame" x="0.0" y="21" width="334" height="2"/>
-                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="8DC-gg-kYE"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hs1-tl-sAq">
-                                        <rect key="frame" x="0.0" y="213" width="334" height="23"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="コース" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yJa-8Q-QTS" customClass="TextFeld" customModule="SampleFirebaseSeminariOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFd-K3-Cr9">
-                                                <rect key="frame" x="0.0" y="21" width="334" height="2"/>
-                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="C9d-vl-ib0"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-cE-DUj">
-                                        <rect key="frame" x="0.0" y="284" width="334" height="71.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自己紹介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqF-uv-kMK">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <color key="textColor" systemColor="placeholderTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dD9-mf-NSa" customClass="TextViewContainer" customModule="SampleFirebaseSeminariOS" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="19.5" width="334" height="50"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fl3-jL-SCH">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="389"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yKI-JJ-TVS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzL-Dm-ReO">
+                                                        <rect key="frame" x="187.5" y="0.0" width="0.0" height="48"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <color key="textColor" systemColor="labelColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    </textView>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="48" id="bl5-9R-aRy"/>
+                                                            <constraint firstAttribute="width" id="bwy-O6-ifL"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="oOd-lc-2hY">
+                                                        <rect key="frame" x="32" y="48" width="311" height="341"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dYo-6g-Cr8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="311" height="23"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="本名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ya8-fg-oFy" customClass="TextFeld" customModule="SampleFirebaseSeminariOS" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gT3-uC-LBo">
+                                                                        <rect key="frame" x="0.0" y="21" width="311" height="2"/>
+                                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="2" id="IHa-vL-TPU"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UZQ-As-DrO">
+                                                                <rect key="frame" x="0.0" y="71" width="311" height="23"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ニックネーム" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ptO-PY-hMi" customClass="TextFeld" customModule="SampleFirebaseSeminariOS" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvG-fm-3OS">
+                                                                        <rect key="frame" x="0.0" y="21" width="311" height="2"/>
+                                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="2" id="NhM-iS-MgJ"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="k8I-7w-1SR">
+                                                                <rect key="frame" x="0.0" y="142" width="311" height="23"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="リーダーズ期" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHt-IT-qU0" customClass="TextFeld" customModule="SampleFirebaseSeminariOS" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                    </textField>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mq4-FZ-j4h">
+                                                                        <rect key="frame" x="0.0" y="21" width="311" height="2"/>
+                                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="2" id="8DC-gg-kYE"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hs1-tl-sAq">
+                                                                <rect key="frame" x="0.0" y="213" width="311" height="23"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="コース" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yJa-8Q-QTS" customClass="TextFeld" customModule="SampleFirebaseSeminariOS" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                    </textField>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFd-K3-Cr9">
+                                                                        <rect key="frame" x="0.0" y="21" width="311" height="2"/>
+                                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="2" id="C9d-vl-ib0"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-cE-DUj">
+                                                                <rect key="frame" x="0.0" y="284" width="311" height="57"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自己紹介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqF-uv-kMK">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="19.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <color key="textColor" systemColor="placeholderTextColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yKI-JJ-TVS" customClass="TextView" customModule="SampleFirebaseSeminariOS" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="19.5" width="311" height="35.5"/>
+                                                                        <color key="textColor" systemColor="labelColor"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                    </textView>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeT-lf-jOf">
+                                                                        <rect key="frame" x="0.0" y="55" width="311" height="2"/>
+                                                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="2" id="bBt-u9-Bm8"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" secondItem="yKI-JJ-TVS" secondAttribute="height" id="FZZ-jQ-9VQ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="yKI-JJ-TVS" secondAttribute="trailing" id="KeM-xE-8mJ"/>
-                                                    <constraint firstItem="yKI-JJ-TVS" firstAttribute="top" secondItem="dD9-mf-NSa" secondAttribute="top" id="Z2k-Ou-uEQ"/>
-                                                    <constraint firstItem="yKI-JJ-TVS" firstAttribute="leading" secondItem="dD9-mf-NSa" secondAttribute="leading" id="kfb-i6-x96"/>
+                                                    <constraint firstItem="oOd-lc-2hY" firstAttribute="leading" secondItem="fl3-jL-SCH" secondAttribute="leading" constant="32" id="Jj5-eN-cWL"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outlet property="textView" destination="yKI-JJ-TVS" id="a5C-sl-V8q"/>
-                                                </connections>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeT-lf-jOf">
-                                                <rect key="frame" x="0.0" y="69.5" width="334" height="2"/>
-                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="bBt-u9-Bm8"/>
-                                                </constraints>
-                                            </view>
+                                            </stackView>
                                         </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpz-hM-4mf">
-                                        <rect key="frame" x="0.0" y="403.5" width="334" height="36"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <inset key="contentEdgeInsets" minX="24" minY="8" maxX="24" maxY="8"/>
-                                        <state key="normal" title="データを追加する">
-                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="add" destination="BYZ-38-t0r" eventType="touchUpInside" id="URR-1B-n1Q"/>
-                                        </connections>
-                                    </button>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="fl3-jL-SCH" secondAttribute="trailing" id="AdR-iX-O8t"/>
+                                            <constraint firstItem="fl3-jL-SCH" firstAttribute="top" secondItem="PXW-wb-3h2" secondAttribute="top" id="Ndm-Ox-Kcb"/>
+                                            <constraint firstItem="fl3-jL-SCH" firstAttribute="leading" secondItem="PXW-wb-3h2" secondAttribute="leading" id="PZv-hp-P0a"/>
+                                            <constraint firstAttribute="height" constant="600" id="Rrz-4i-AJG"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="PXW-wb-3h2" firstAttribute="trailing" secondItem="v41-Oy-Qs1" secondAttribute="trailing" constant="375" id="7fC-YV-HDM"/>
+                                    <constraint firstItem="PXW-wb-3h2" firstAttribute="top" secondItem="v41-Oy-Qs1" secondAttribute="top" id="9qK-Fi-b5E"/>
+                                    <constraint firstItem="v41-Oy-Qs1" firstAttribute="bottom" secondItem="PXW-wb-3h2" secondAttribute="bottom" id="lWe-ho-W1o"/>
+                                    <constraint firstItem="PXW-wb-3h2" firstAttribute="trailing" secondItem="fGN-MK-lpq" secondAttribute="trailing" id="p13-93-Wr2"/>
+                                    <constraint firstItem="PXW-wb-3h2" firstAttribute="leading" secondItem="v41-Oy-Qs1" secondAttribute="leading" id="vw2-Av-B76"/>
+                                    <constraint firstItem="PXW-wb-3h2" firstAttribute="leading" secondItem="fGN-MK-lpq" secondAttribute="leading" id="xlj-Za-PBl"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="v41-Oy-Qs1"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="fGN-MK-lpq"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fl3-jL-SCH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="QxO-Jh-oWl"/>
-                            <constraint firstItem="fl3-jL-SCH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="jbB-To-7VF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fl3-jL-SCH" secondAttribute="trailing" constant="40" id="wqs-9W-5kh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3P3-Vq-Pox" secondAttribute="trailing" id="1BU-y1-U6w"/>
+                            <constraint firstItem="3P3-Vq-Pox" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3o4-YL-Y9c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kpz-hM-4mf" secondAttribute="bottom" constant="48" id="7wm-in-JlQ"/>
+                            <constraint firstItem="kpz-hM-4mf" firstAttribute="top" secondItem="3P3-Vq-Pox" secondAttribute="bottom" constant="32" id="HfG-rl-Ifx"/>
+                            <constraint firstItem="3P3-Vq-Pox" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Qwv-Th-7sU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpz-hM-4mf" secondAttribute="trailing" constant="32" id="g8C-iV-IdQ"/>
+                            <constraint firstItem="kpz-hM-4mf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="yXn-V3-uyC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Self Introduction" id="a6N-bK-2Ay"/>
@@ -157,6 +188,7 @@
                         <outlet property="fullNameTextField" destination="ya8-fg-oFy" id="o1C-Fp-LQb"/>
                         <outlet property="messageTextView" destination="yKI-JJ-TVS" id="exP-lk-jf3"/>
                         <outlet property="nickNameTextField" destination="ptO-PY-hMi" id="jba-13-96Z"/>
+                        <outlet property="scrollView" destination="3P3-Vq-Pox" id="mf5-cV-Gj9"/>
                         <outlet property="termTextField" destination="zHt-IT-qU0" id="GuF-iT-z3m"/>
                     </connections>
                 </viewController>
@@ -170,7 +202,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tMW-2K-22d" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Saf-5v-wPz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" systemColor="systemOrangeColor"/>
                         <textAttributes key="titleTextAttributes">
