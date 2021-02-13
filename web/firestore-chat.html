@@ -1,0 +1,95 @@
+<!-- created by Haseryo -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firestore Chat</title>
+</head>
+
+<style>
+  .chat {
+    margin-bottom: 20px;
+  }
+</style>
+
+<body>
+  <h1>チャット</h1>
+  <div>
+    <form>
+      <p>
+        <input type="text" id="nickname" placeholder="メンター名">
+      </p>
+
+      <p>
+        <textarea id="message" cols="30" rows="4" placeholder="メッセージ"></textarea>
+      </p>
+
+      <p>
+        <button id="btn">投稿</button>
+      </p>
+    </form>
+  </div>
+
+  <div id="post-list">
+
+  </div>
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+<script>
+  //Firebaseセットアップ
+  var firebaseConfig = {
+    apiKey: "AIzaSyAta6qinB2Y_37U3qvZtVxZqRaKMZGQ5w4",
+    authDomain: "fir-lecture-3d7e6.firebaseapp.com",
+    databaseURL: "https://fir-lecture-3d7e6-default-rtdb.firebaseio.com",
+    projectId: "fir-lecture-3d7e6",
+    storageBucket: "fir-lecture-3d7e6.appspot.com",
+    messagingSenderId: "888812009821",
+    appId: "1:888812009821:web:68f83916c4ef95bf7b50b4",
+    measurementId: "G-J8RSC7YYN1"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  let db = firebase.firestore();
+
+  //データの書き込み
+  $('#btn').on('click', function (event) {
+    event.preventDefault();
+
+    let nickname = $('#nickname').val();
+    let message = $('#message').val();
+
+    db.collection('chats').add({
+      nickname: nickname,
+      message: message,
+      created_at: firebase.firestore.FieldValue.serverTimestamp()
+    })
+  })
+
+  //データの読み込み
+  let users = db.collection("chats").orderBy("created_at");
+  users.onSnapshot(function (querySnapshot) {
+    $('#post-list').empty();
+    querySnapshot.forEach(function (doc) {
+      // console.log(doc.id, " =>", doc.data());
+      let user = doc.data()
+
+      let nickname = user.nickname;
+      let message = user.message;
+
+      let div = $('<div></div>').attr('class', 'chat')
+      div.append(`<span>${nickname}:${message}</span>`)
+      $('#post-list').append(div);
+    })
+  })
+
+</script>
+</html>
