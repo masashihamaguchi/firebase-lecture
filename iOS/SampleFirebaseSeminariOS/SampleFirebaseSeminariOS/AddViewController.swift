@@ -15,10 +15,28 @@ class AddViewController: UIViewController {
     @IBOutlet weak var termTextField: UITextField!
     @IBOutlet weak var courseTextField: UITextField!
     @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        NotificationCenter.default.addObserver(forName: UIApplication.keyboardWillShowNotification, object: nil, queue: nil) { notification in
+            let height = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height ?? 0
+            if !self.messageTextView.isFirstResponder {
+                return
+            }
+            let globalFrame = self.messageTextView.convert(self.messageTextView.frame, to: self.view)
+            let bottom = globalFrame.height + globalFrame.origin.y
+            let keyboardTop = UIScreen.main.bounds.height - height
+            let distance = bottom - keyboardTop
+            if distance >= 0 {
+                self.scrollView.contentOffset.y = distance + 50
+            }
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIApplication.keyboardDidHideNotification, object: nil, queue: nil) { notification in
+            self.scrollView.contentOffset.y = 0
+        }
     }
     
     @IBAction func add() {
@@ -38,7 +56,7 @@ class AddViewController: UIViewController {
         
         Firestore.firestore().collection("users").document().setData(data) { (error) in
             if let error = error {
-                self.showAlert(title: "エラー", message: "\(error.localizedDescription)")
+                self.showAlert(title: "エラー", message: "\(error)")
             } else {
                 self.showAlert(title: "成功", message: "データを追加しました！")
             }
