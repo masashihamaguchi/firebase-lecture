@@ -1,12 +1,11 @@
 # Firebase
 # iOS
-
-
+*GoogleService-Info.plist
 # Android
 *google-services.json
-
 # Unity
 
 # Web
+
 
 *.DS_Store
